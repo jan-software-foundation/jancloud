@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "start": "tsc && node dist/app.js"
   },
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
     "@types/http-errors": "^1.8.1",
+    "@types/mongodb": "^3.6.20",
     "@types/morgan": "^1.9.3",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "ejs": "^3.1.6",
+    "mongodb": "^3.6.10",
+    "morgan": "^1.10.0",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2"
   },
