@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "start": "npm build && tsc && node dist/app.js"
+    "start": "npm run build && tsc && node dist/app.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
