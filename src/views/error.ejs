@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <style>
+            h1, h2 {
+                font-family: 'Courier New', Courier, monospace;
+            }
+            img {
+                height: 350px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Error <%= statusCode %></h2>
+        <h3><%= statusText %></h3>
+        <img src="https://http.cat/<%= statusCode %>"/>
+    </body>
+</html>
