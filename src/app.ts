@@ -9,7 +9,7 @@ import history from 'connect-history-api-fallback';
 const app = express();
 
 (async () => {
-    //await require('./api/index').init(app);
+    await require('./api/index').init(app);
     
     app.get('/', (req, res) => res.sendFile('/vue-dist/index.html', {root: path.join(process.cwd())}))
 
