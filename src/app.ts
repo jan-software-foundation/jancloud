@@ -11,15 +11,14 @@ const app = express();
 (async () => {
     //await require('./api/index').init(app);
     
-    app.get('/', (req, res) => res.sendFile('/public/index.html', {root: path.join(process.cwd())}))
+    app.get('/', (req, res) => res.sendFile('/vue-dist/index.html', {root: path.join(process.cwd())}))
 
-    app.use('/', express.static('public'));
+    app.use('/', express.static('vue-dist'));
     
     app.use(logger('dev'));
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
-    app.use(express.static(path.join(__dirname, 'public')));
     app.use(history());
     
     

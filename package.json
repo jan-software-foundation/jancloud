@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/mongodb": "^3.6.20",
     "@types/node": "^16.3.1",
+    "@types/webpack-env": "^1.16.2",
     "cookie-parser": "^1.4.5",
     "core-js": "^3.6.5",
     "mongodb": "^3.6.10",
@@ -41,7 +42,7 @@
     "rules": {}
   },
   "vue": {
-    "outputDir": "public"
+    "outputDir": "vue-dist"
   },
   "browserslist": [
     "> 1%",
