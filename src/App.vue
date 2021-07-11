@@ -24,6 +24,20 @@ export default {
 body {
   margin: 0;
 }
+
+:root {
+  --backgroundDark: rgb(7, 3, 26);
+  --background: #151624;
+  --backgroundLight:  #0d1e44;
+  --foregroundDark: #126b82;
+  --foreground: #71ccff;
+  --font: whitesmoke;
+  /* The above is(will be) customizable*/
+  --error: #FF0018;
+  --warn: #FFFF41;
+  --info: #0000F9;
+  --success: #008018;
+  /* The lgbt flag makers have great colour schemes */
 }
 @-webkit-keyframes background {
   0%{background-position:50% 0%}
