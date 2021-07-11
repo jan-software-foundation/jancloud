@@ -1,18 +1,19 @@
 <template>
   <div class="login">
     <div class="container">
-        <div style="background-image: linear-gradient(var(--foreground),var(--foregroundDark))">
-          <h1 style="padding: 10px;color:var(--background)">Log in to JanCloud</h1>
+        <div>
+          <h1 style="padding: 10px; color: var(--font); text-align: center">Log in to JanCloud</h1>
         </div>
-        <div style="padding: 10px;color:var(--foreground)">Description</div>
     </div>
 
     <div class="container">
       <Input name="Username" label></Input>
       <Input name="Password" label></Input>
 
-      <Button type="submit" :click-async="post">Login</Button>
-      <Button>Register</Button>
+      <Button type="submit" style="width: 50%; margin-left: 25%; text-align: center; display: flex; align-items: center; justify-content: center;" :click-async="post">
+        <img src="/graphics/login.svg" style="flex-basis: 40%"/>
+        <a style="padding-left: 10px">Login</a> <!-- TODO align this shit somehow -->
+      </Button>
     </div>
   </div>
 </template>
@@ -28,7 +29,7 @@ export default {
   name: 'Login',
   methods: {
       async post() {
-        await (()=>{return new Promise(resolve => setTimeout(resolve, 2500));})()
+        await new Promise(resolve => setTimeout(resolve, 2500));
         return 'ok'
       }
   }
@@ -50,7 +51,6 @@ h1 {
   margin: auto;
   margin-top: 69px;
   top: 100%;
-  background-color: var(--backgroundLight);
 }
 
 
@@ -63,5 +63,5 @@ h1 {
   .switchbtn {
     width: 100%;
   }
-} 
+}
 </style>

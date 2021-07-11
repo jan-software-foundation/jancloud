@@ -38,41 +38,22 @@ export default {
 
 <style scoped>
 .button {
-  background-color: var(--backgroundLight);
+  background-color: var(--background);
   color: var(--font);
   padding: 14px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: calc(100% - 16px);
   transition-duration: 100ms;
   text-align: left;
   text-transform: uppercase;
   font-size: initial;
+  border-radius: 10px;
+  margin: 8px;
 }
 
 .button:hover {
-  background: linear-gradient(var(--foregroundDark), var(--foreground));
-  color: var(--background);
-}
-
-.submit {
-  background-color: var(--success); 
-}
-
-
-/*TODO: Different button types hover look ugly af */
-.submit:hover {
-  background: linear-gradient(var(--success), var(--foreground));
-  filter: brightness(130%);
-}
-
-.cancel {
-  background-color: var(--error);
-}
-
-.cancel:hover {
-  background-color: var(--error); 
-  filter: brightness(130%);
+  filter: brightness(1.5);
 }
 
 .lds-spinner {
