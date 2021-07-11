@@ -8,18 +8,19 @@
       <Input name="Username" label></Input>
       <Input name="Password" label></Input>
 
-      <button type="submit">Login</button>
-      <button type="button" class="switchbtn">Sign up</button>
+      <Button type="submit" :click-async="post">Login</Button>
+      <Button>Register</Button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Input from './components/Input.vue'
-//TODO: Button Component
+import Button from './components/Button.vue'
 export default {
     components: {
-        Input
+        Input,
+        Button
   },
   name: 'Login',
   methods: {
