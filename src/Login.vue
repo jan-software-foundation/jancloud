@@ -1,7 +1,10 @@
 <template>
   <div class="login">
-    <div class="container" style="background-image: linear-gradient(var(--foreground),var(--foregroundDark))">
-        <h1 style="padding: 10px;color:var(--background)">Log in to JanCloud</h1>
+    <div class="container">
+        <div style="background-image: linear-gradient(var(--foreground),var(--foregroundDark))">
+          <h1 style="padding: 10px;color:var(--background)">Log in to JanCloud</h1>
+        </div>
+        <div style="padding: 10px;color:var(--foreground)">Description</div>
     </div>
 
     <div class="container">
@@ -24,15 +27,29 @@ export default {
   },
   name: 'Login',
   methods: {
+      async post() {
+        await (()=>{return new Promise(resolve => setTimeout(resolve, 2500));})()
+        return 'ok'
+      }
   }
 }
 </script>
 
 <style scoped>
 
+.container + .container {
+  margin-top: 25px;
+}
+
+h1 {
+  margin: 0;
+}
+
 .login {
   width: 469px;
   margin: auto;
+  margin-top: 69px;
+  top: 100%;
   background-color: var(--backgroundLight);
 }
 
