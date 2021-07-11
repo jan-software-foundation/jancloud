@@ -1,16 +1,21 @@
 <template>
   <div id="app">
-    <Login></Login>
+    <Navigation></Navigation>
+    <router-view></router-view>
+    <div class=background></div>
   </div>
 </template>
 
 <script>
-import Login from "./components/Login.vue"
+import Navigation from './components/Navigation.vue'
 
 export default {
   name: 'App',
   components: {
-    Login
+    Navigation
+  },
+  mounted() {
+    console.log(this.$route)
   }
 }
 </script>
