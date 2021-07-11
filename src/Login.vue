@@ -35,25 +35,6 @@ export default {
   background-color: var(--backgroundLight);
 }
 
-button {
-  background-color: var(--backgroundLight);
-  color: var(--font);
-  padding: 14px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  transition-duration: 100ms;
-}
-
-button:hover {
-  background-color: var(--foregroundDark);
-  color: var(--background);
-}
-
-.switchbtn {
-  background-color: var(--backgroundLight);
-  color: var(--font)
-}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
