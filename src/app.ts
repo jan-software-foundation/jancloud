@@ -11,10 +11,9 @@ const app = express();
 (async () => {
     await require('./api/index').init(app);
     
-    app.get('/', (req, res) => res.sendFile('/vue-dist/index.html', {root: path.join(process.cwd())}))
-
     app.use('/', express.static('vue-dist'));
-    
+    app.get('*', (req, res) => res.sendFile('/vue-dist/index.html', {root: path.join(process.cwd())}))
+
     app.set('view engine', 'ejs')
     app.use(logger('dev'));
     app.use(express.json());
