@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <label class="inputlabel" v-if="label">{{name}}</label>
+    <label v-if="label" class="label">{{name}}</label>
     <input type="text" :placeholder="placeholder || `Enter ${name}`" :required="required" :id="id || name.toLowerCase()">
   </div>
 </template>
@@ -22,16 +22,19 @@ export default {
 
 <style scoped>
 
-.inputlabel{
+.label{
   text-align: left;
-  margin-left: 10px;
+  margin-left: 15px;
+  font-size: small;
+  color: gray;
+  font-family: Calibri,serif;
 }
 
 input {
   width: 100%;
   padding: 12px 20px;
   display: inline-block;
-  border: 1px solid var(--backgroundDark);
+  border: 0px solid var(--backgroundDark);
   background-color: var(--backgroundLight);
   box-sizing: border-box;
   transition-duration: 0.1s;
