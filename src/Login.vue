@@ -11,8 +11,8 @@
       <Input name="Password" label></Input>
 
       <Button type="submit" style="width: 50%; margin-left: 25%; text-align: center; display: flex; align-items: center; justify-content: center;" :click-async="post">
-        <img src="/graphics/login.svg" style="flex-basis: 40%"/>
-        <a style="padding-left: 10px">Login</a> <!-- TODO align this shit somehow -->
+        <img alt="" src="/graphics/login.svg" class=icon />
+        <a style="padding-left: 10px;" class='icon'>Login</a>
       </Button>
     </div>
   </div>
@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+}
 
 .container + .container {
   margin-top: 25px;
