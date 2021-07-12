@@ -22,12 +22,24 @@
 <style>
     @import url('/fonts/Open-Sans/font.css');
 
+    @keyframes switch-page {
+        0% {
+            opacity: 0;
+            top: 120;
+        }
+        100% {
+            opacity: 1;
+            top: 69;
+        }
+    }
+
     .fade-enter-active{
-        transition: opacity 0.5s;
+        animation: switch-page 0.69s;
     }
 
     .fade-enter,
     .fade-leave-to {
+        margin-top: 120px;
         opacity: 0;
     }
 
@@ -107,17 +119,17 @@
     }
 
     .background {
-        background: linear-gradient(180deg, var(--backgroundDark) 70%, var(--foregroundDark));
-        background-size: 120% 120%;
+        background: linear-gradient(180deg, var(--backgroundDark) 86%, var(--foregroundDark) 105%);
+        background-size: 105% 105%;
         width: 100%;
         position: absolute;
         top: 0;
         bottom: 0;
         z-index: -100;
-        -webkit-animation: background 15s ease infinite;
-        -moz-animation: background 15s ease infinite;
-        -o-animation: background 15s ease infinite;
-        animation: background 15s ease infinite;
+        -webkit-animation: background 10s ease infinite;
+        -moz-animation: background 10s ease infinite;
+        -o-animation: background 10s ease infinite;
+        animation: background 10s ease infinite;
     }
 
     #app {

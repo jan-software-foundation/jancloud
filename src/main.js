@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Login from './Login.vue'
 import Signup from './Signup.vue'
+import Profile from './Profile.vue'
 
 Vue.config.productionTip = false
 
@@ -20,6 +21,10 @@ new Vue({
         path: '/sign-up',
         component: Signup
       },
+      {
+        path: '/profile/:username',
+        component: Profile
+      }
     ]
   }),
   data: {

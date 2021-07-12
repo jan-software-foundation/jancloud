@@ -12,7 +12,7 @@
 
             <Button type="submit" style="" :click-async="register">
                 <img alt="" src="/graphics/login.svg" class=icon />
-                <a style="padding-left: 10px;" class='icon'>Login</a>
+                <a style="padding-left: 10px;" class='icon'>Sign up</a>
             </Button>
         </div>
     </div>
