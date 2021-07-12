@@ -8,7 +8,14 @@
 
 ## Password hashing
 (TODO describe how passwords should be hashed here)
-# Authentication
+# User
+
+The user object describes the information of a user profile.
+| key           | type   | description                         |
+| :------------ | :----- | :---------------------------------- |
+| username      | string | The name of a user, editable at any time.
+| id            | string | The ULID of the user. Not changeable.
+
 
 ## **POST** /signin/register
 
