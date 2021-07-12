@@ -1,7 +1,9 @@
 <template>
     <div id="app">
         <Navigation></Navigation>
-        <router-view></router-view>
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
         <div class=background></div>
     </div>
 </template>
@@ -20,16 +22,25 @@
 <style>
     @import url('/fonts/Open-Sans/font.css');
 
+    .fade-enter-active{
+        transition: opacity 0.5s;
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
     body {
         margin: 0;
     }
 
     :root {
-        --backgroundDark: rgb(7, 3, 26);
-        --background: #151624;
-        --backgroundLight: #3d424c;
-        --foregroundDark: #126b82;
-        --foreground: #71ccff;
+        --backgroundDark: rgb(3, 9, 29);
+        --background: #0d0b2c;
+        --backgroundLight: #10244e;
+        --foregroundDark: #21758a;
+        --foreground: #a5d0e9;
         --font: whitesmoke;
         /* The above is(will be) customizable*/
         --error: #FF0018;
