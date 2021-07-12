@@ -13,9 +13,6 @@
         name: 'App',
         components: {
             Navigation
-        },
-        mounted() {
-            console.log(this.$route)
         }
     }
 </script>

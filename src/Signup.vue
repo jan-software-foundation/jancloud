@@ -2,15 +2,15 @@
     <div class="login">
         <div class="container">
             <div>
-                <h1 style="padding: 10px; color: var(--font); text-align: center">Log in to JanCloud</h1>
+                <h1 style="padding: 10px; color: var(--font); text-align: center">Sign up for JanCloud</h1>
             </div>
         </div>
 
         <div class="container">
-            <Input name="Username" label></Input>
-            <Input name="Password" label></Input>
+            <Input name="Username" placeholder="You will be using this to log on." label></Input>
+            <Input name="Password" placeholder="Enter your password" label></Input>
 
-            <Button type="submit" style="" :click-async="login">
+            <Button type="submit" style="" :click-async="register">
                 <img alt="" src="/graphics/login.svg" class=icon />
                 <a style="padding-left: 10px;" class='icon'>Login</a>
             </Button>
@@ -21,14 +21,15 @@
 <script lang="ts">
     import Input from './components/Input.vue'
     import Button from './components/Button.vue'
+
     export default {
         components: {
             Input,
             Button
         },
-        name: 'Login',
+        name: 'Signup',
         methods: {
-            async login() {
+            async register() {
                 //TODO: Waiting for backend api to be finished
             }
         }

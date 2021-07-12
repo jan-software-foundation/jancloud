@@ -3,9 +3,12 @@
         <li>
             <router-link to="/home">Home</router-link>
         </li>
-        <div style="float:right">
+        <div style="float:right;">
             <li>
                 <router-link to="/login">Login</router-link>
+            </li>
+            <li>
+                <router-link to="/sign-up">Sign Up</router-link>
             </li>
         </div>
     </ul>
@@ -18,6 +21,10 @@
 </script>
 
 <style scoped>
+    div li {
+         display: inline-grid;
+    }
+
     ul.sidenav {
         list-style-type: none;
         margin: 0;

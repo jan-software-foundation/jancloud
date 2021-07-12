@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import Login from './Login.vue'
+import Signup from './Signup.vue'
 
 Vue.config.productionTip = false
 
@@ -14,8 +15,15 @@ new Vue({
       {
         path: '/login',
         component: Login
-      }
+      },
+      {
+        path: '/sign-up',
+        component: Signup
+      },
     ]
   }),
+  data: {
+    instanceName: "JanCloud",
+  },
   render: h => h(App),
 }).$mount('#app')

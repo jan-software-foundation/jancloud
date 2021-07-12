@@ -1,5 +1,5 @@
 <template>
-    <button class="button" :class="type" :type="type" @click="onclick">
+    <button class="button" @click="onclick">
         <b>
             <slot></slot>
         </b>
@@ -31,15 +31,12 @@
             }
         },
         props: {
-            /** For styling, one of submit or cancel*/
-            type: String,
             /** If an async function is to be assigned to the button, use this attr
              * A loading animation will show and will stop once a return value is received
              */
             clickAsync: Function
         },
         methods: {
-            //TODO: Invalid handler for event "click": got undefined
             async onclick() {
                 if (this.clickAsync) {
                     this.loading = true
@@ -58,13 +55,17 @@
         padding: 14px 20px;
         border: none;
         cursor: pointer;
-        width: calc(100% - 16px);
         transition-duration: 100ms;
-        text-align: left;
         text-transform: uppercase;
         font-size: initial;
         border-radius: 10px;
         margin: 8px;
+        width: 50%;
+        margin-left: 25%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .button:hover {
