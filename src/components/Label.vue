@@ -17,7 +17,7 @@
     })
 </script>
 
-<style>
+<style scoped>
     .label {
         color: white;
         padding: 1px;
