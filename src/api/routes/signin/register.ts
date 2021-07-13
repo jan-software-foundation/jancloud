@@ -5,8 +5,8 @@ import { ulid } from 'ulid';
 import { renderError, serverError } from '../../misc/errors';
 
 const validation_regexes = {
-    USERNAME: /[A-z0-9_-]{2,32}/g, /* Letters, numbers, underscores and hyphens, between 2 and 32 symbols long */
-    PASSWORD: /(.){8,128}/g        /* All symbols, between 8 and 128 symbols long */
+    USERNAME: /[A-z0-9_-]{2,32}/, /* Letters, numbers, underscores and hyphens, between 2 and 32 symbols long */
+    PASSWORD: /(.){8,128}/        /* All symbols, between 8 and 128 symbols long */
 };
 
 export async function register(app: express.Application, db: mongodb.Db) {
