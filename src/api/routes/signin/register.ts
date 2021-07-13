@@ -1,6 +1,7 @@
 import express from 'express';
 import mongodb from 'mongodb';
 import argon2 from 'argon2';
+import { ulid } from 'ulid';
 import { renderError, serverError } from '../../misc/errors';
 
 const validation_regexes = {
@@ -26,12 +27,26 @@ export async function register(app: express.Application, db: mongodb.Db) {
                 return renderError(req, res, 400, `Password does not match requirements: ${validation_regexes.PASSWORD}`);
             }
             
+            // Check if user with the same username already exists
+            if (await db.collection("users").findOne({ username: body.username })) {
+                return renderError(req, res, 400, "An user with this username already exists");
+            };
+            
             let passwordHash = await argon2.hash(body.password);
             console.log(passwordHash);
             
-            /* TODO Add user to DB */
+            let userID = ulid();
             
-            res.status(200).send({ "success": true });
+            await db.collection("users").insertOne({
+                _id: userID,
+                username: body.username,
+                passwordHash: passwordHash
+            });
+            
+            res.status(200).send({
+                "success": true,
+                "userID": userID
+            });
         } catch(e) {
             serverError(req, res, e);
         }

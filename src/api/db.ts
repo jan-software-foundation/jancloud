@@ -20,8 +20,5 @@ export async function db(): Promise<mongodb.Db> {
     
     let db = client.db(process.env.DB_NAME ?? 'jancloud');
     
-    // Initalize the database, if not already done
-    db.collection('users').insertOne({ name: 'amogus' });
-    
     return db;
 }
