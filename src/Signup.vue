@@ -7,8 +7,18 @@
         </div>
 
         <div class="container">
-            <Input name="Username" placeholder="You will be using this to log on." label></Input>
-            <Input name="Password" placeholder="Enter your password" label></Input>
+            <label style="color: red">{{usererr}}</label> <!-- TODO: Style this -->
+            <Input
+                name="Username"
+                v-model="username"
+                placeholder="You will be using this to log on."
+                label></Input>
+            <label style="color: red">{{passerr}}</label> <!-- TODO: Also style this -->
+            <Input
+                name="Password"
+                v-model="password"
+                placeholder="Enter your password" 
+                label></Input>
 
             <Button type="submit" style="" :click-async="register">
                 <img alt="" src="/graphics/login.svg" class=icon />
@@ -18,7 +28,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
     import Input from './components/Input.vue'
     import Button from './components/Button.vue'
 
@@ -28,9 +38,37 @@
             Button
         },
         name: 'Signup',
+        data: function() {
+            return {
+                username: '',
+                password: '',
+                userregex: /[A-z0-9_-]{2,32}/,
+                passregex: /(.){8,128}/,
+                usererr: '',
+                passerr: ''
+            }
+        },
+        watch: {
+            username: 'validate_username',
+            password: 'validate_password'
+        },
         methods: {
-            async register() {
-                //TODO: Waiting for backend api to be finished
+            register() {},
+            validate_username() {
+                if(this.username.length <= 2 || this.username.length > 32) {
+                    this.usererr = 'Username length should be inbetween 2 and 32.'
+                }
+                else if(!(/[A-z0-9_-]{2,32}/.test(this.username) && this.username.match(/[A-z0-9_-]{2,32}/)[0].length == this.username.length)) {
+                    this.usererr = 'Username should be a combination of letters, numbers, underscores and hythens.'
+                }
+                else this.usererr = ''
+            },
+            validate_password() {
+                if(this.password.length <= 8 || this.password.length > 128) {
+                    this.passerr = 'Password length should be inbetween 8 and 128.'
+                }
+                else this.passerr = ''
+                
             }
         }
     }
