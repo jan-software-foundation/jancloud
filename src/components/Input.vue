@@ -1,8 +1,18 @@
 <template>
     <div class="input">
-        <label v-if="label" class="label">{{name}}</label>
-        <input type="text" autocomplete="off" :placeholder="placeholder || `Enter ${name}`" :required="required"
-            :id="id || name.toLowerCase()">
+        <label 
+            v-if="label"
+            class="label">
+                {{name}}
+        </label>
+        <input
+            type="text"
+            autocomplete="off"
+            :placeholder="placeholder || `Enter ${name}`"
+            :required="required"
+            :id="id || name.toLowerCase()"
+            v:value="value"
+            v-on:input="$emit('input', $event.target.value)">
     </div>
 </template>
 
@@ -14,10 +24,10 @@
             id: String,
             placeholder: String,
             label: Boolean,
-            required: Boolean
+            required: Boolean,
+            value: String,
         },
-        mounted() {
-            
+        methods: {
         }
     }
 </script>
