@@ -10,7 +10,7 @@ const validation_regexes = {
 };
 
 export async function register(app: express.Application, db: mongodb.Db) {
-    app.get('/api/signin/register', async (req: express.Request, res: express.Response) => {
+    app.get('/api/auth/register', async (req: express.Request, res: express.Response) => {
         try {
             let body = req.body;
             
@@ -23,7 +23,7 @@ export async function register(app: express.Application, db: mongodb.Db) {
             if (!(validation_regexes.USERNAME.test(body.username) && body.username.match(validation_regexes.USERNAME)[0].length == body.username.length)) { //i showed this to other dev and he didnt aaaaa therefore this is approved
                 return renderError(req, res, 400, `Username does not match requirements: ${validation_regexes.USERNAME}`);
             }
-            if (!(validation_regexes.PASSWORD.test(body.password) && body.password.match(validation_regexes.USERNAME)[0].length == body.username.length) {
+            if (!(validation_regexes.PASSWORD.test(body.password) && body.password.match(validation_regexes.USERNAME)[0].length == body.username.length)) {
                 return renderError(req, res, 400, `Password does not match requirements: ${validation_regexes.PASSWORD}`);
             }
             

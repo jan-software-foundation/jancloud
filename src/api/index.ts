@@ -6,7 +6,7 @@ export async function init(app: express.Application) {
     
     let promises = [
         import('./routes/root'),
-        import('./routes/signin/register'),
+        import('./routes/auth/register'),
     ];
     
     const resolved = await Promise.all(promises);
