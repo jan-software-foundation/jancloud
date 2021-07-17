@@ -1,6 +1,6 @@
 <template>
     <div class="profile">
-        <profile-card></profile-card>
+        <profile-card type="card"></profile-card>
         <div style="">
             <Button>Edit profile</Button>
         </div>

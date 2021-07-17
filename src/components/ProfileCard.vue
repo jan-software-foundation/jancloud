@@ -1,15 +1,15 @@
 <template>
-    <div class="profile-card">
+    <div class="profile-card" :class="{ smallcard : (type !== 'card')}">
         <div class="profile-header">
-            <img class="profile-pic" src="../assets/testpfp.png" alt="">
-            <div class="profile-name">
+            <img class="profile-pic" src="../assets/testpfp.png" alt="" :class="{ smallicon : (type !== 'card')}">
+            <div class="profile-name" :class="{ smallname : (type !== 'card')}">
                 {{ name }}
-                <div style="display: inline-block">
+                <div style="display: inline-block" v-if="type == 'card'">
                     <Label v-bind:key="role.id" v-for="role in roles" :color="role.color">{{role.name}}</Label>
                 </div>
             </div>
         </div>
-        <div class="description">{{description}}</div>
+        <p class="description" v-if="type == 'card'">{{description}}</p>
     </div>
 </template>
 
@@ -19,7 +19,12 @@
         props: {
             /* One of user or id. If id is passed, user profile will be fetched.*/
             user: Object,
-            id: String
+            id: String,
+            /* card/label */
+            type: {
+                type: String,
+                default: 'label'
+            }
         },
         components: {
             Label
@@ -27,8 +32,8 @@
         name: 'ProfileCard',
         data: function () {
             return {
-                name: 'Lorem Ipsum',
-                description: 'among us',
+                name: '@LoremIpsum',
+                description: `imposter amoung us`,
                 userid: 'object ojbect',
                 roles: [
                     {
@@ -62,6 +67,7 @@
 </script>
 
 <style scoped>
+
     Label + Label {
         margin-left: 2px;
     }
@@ -74,10 +80,8 @@
     }
 
     .profile-card {
-        width: 90%;
-        min-width: 300px;
+        width: 300px;
         max-width: 490px;
-        height: 180px;
         padding: 20px;
         text-align: left;
         margin: auto;
@@ -96,12 +100,26 @@
         color: grey;
         font-size: 18px;
         text-overflow: ellipsis;
-        width: 100%c;
-        height: 60px;
+        overflow-wrap: break-word;
+        width: 100%;
     }
 
     h1 {
         margin: 0;
+    }
+    .smallicon {
+        width: 48px;
+        border-radius: 8px;
+    }
+    .smallname {
+        font-size: large;
+        white-space: nowrap;
+        margin-left: 2px;
+    }
+    .smallcard {
+        padding: 5px;
+        width: min-content;
+        white-space: nowrap;
     }
 
 </style>
