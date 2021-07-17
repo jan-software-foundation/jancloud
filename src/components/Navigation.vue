@@ -29,7 +29,7 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-        background-color: var(--background);
+        background: linear-gradient(var(--background), var(--backgroundDark));
         overflow: auto;
         width: 100%;
         height: auto;
@@ -46,13 +46,13 @@
     }
 
     .router-link-active {
-        background-color: var(--foregroundDark);
-        color: white;
+        background-color: var(--backgroundLight);
+        color: var(--background);
     }
 
-    ul.sidenav li a:hover:not(.active) {
+    ul.sidenav li a:hover:not(.router-link-active) {
         background-color: var(--foreground);
-        color: white;
+        color: var(--background);
     }
 
     @media screen and (max-width: 400px) {
