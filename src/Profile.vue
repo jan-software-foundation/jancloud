@@ -26,7 +26,8 @@
 
 <style scoped>
     .profile {
-        width: 469px;
+        max-width: 469px;
+        width: 90%;
         margin: auto;
         margin-top: 69px;
         top: 100%;

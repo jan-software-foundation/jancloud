@@ -50,7 +50,8 @@
     }
 
     .login {
-        width: 469px;
+        width: 90%;
+        max-width: 469px;
         margin: auto;
         margin-top: 69px;
         top: 100%;

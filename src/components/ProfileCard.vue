@@ -27,22 +27,22 @@
         name: 'ProfileCard',
         data: function () {
             return {
-                name: 'Loading',
-                description: 'when impost sus amoung',
+                name: 'Lorem Ipsum',
+                description: 'among us',
                 userid: 'object ojbect',
                 roles: [
                     {
-                        name: "sus",
+                        name: "Admin",
                         color: "red",
                         id: "amoungs"
                     },
                     {
-                        name: "crewmate",
+                        name: "Developer",
                         color: "blue",
                         id: "amoung"
                     },
                     {
-                        name: "wocky slush",
+                        name: "aaaaaa",
                         color: "green",
                         id: "that thing blang b"
                     }
@@ -74,8 +74,9 @@
     }
 
     .profile-card {
-        width: 420px;
-        max-width: 1000px;
+        width: 90%;
+        min-width: 300px;
+        max-width: 490px;
         height: 180px;
         padding: 20px;
         text-align: left;
