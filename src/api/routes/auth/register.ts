@@ -44,7 +44,7 @@ export async function register(app: express.Application, db: mongodb.Db) {
             });
             
             res.status(200).send({
-                "success": true,
+                "success": true, //Dont need this field, http status code enough
                 "userID": userID
             });
         } catch(e) {
